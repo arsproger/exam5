@@ -164,8 +164,8 @@ JOIN Trip ON(Company.id = Trip.company_id)
 WHERE town_from = 'Vladivostok';
 
 -- #12 Вывести id и количество пассажиров для всех прошедших полётов
-SELECT id, COUNT(*) FROM Pass_in_trip
-GROUP BY id;
+SELECT trip_id, COUNT(*) FROM Pass_in_trip
+GROUP BY trip_id order by trip_id;
 
 -- #14 В какие города летал Bruce Willis
 SELECT town_to FROM Trip
