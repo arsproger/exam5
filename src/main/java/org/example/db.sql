@@ -208,5 +208,3 @@ WHERE town_from = 'Rostov' AND town_to = 'Moscow';
 
 -- #21 Удалить все перелеты, совершенные из Москвы (Moscow).
 DELETE FROM Trip WHERE town_from = 'Moscow';
-
-select name from passenger where id
