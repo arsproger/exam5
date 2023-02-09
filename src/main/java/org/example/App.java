@@ -39,11 +39,15 @@ public class App {
     }
 
     public void newCompany(int id, String name) throws SQLException {
-        connection = connect();
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO Company values (?, ?)");
-        statement.setInt(1, id);
-        statement.setString(2, name);
-        statement.executeUpdate();
-        System.out.println("New company added!");
+        try {
+            connection = connect();
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO Company values (?, ?)");
+            statement.setInt(1, id);
+            statement.setString(2, name);
+            statement.executeUpdate();
+            System.out.println("New company added!");
+        } finally {
+            connection.close();
+        }
     }
 }
