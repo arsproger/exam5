@@ -205,13 +205,3 @@ WHERE town_from = 'Rostov' AND town_to = 'Moscow';
 
 -- #21 Удалить все перелеты, совершенные из Москвы (Moscow).
 DELETE FROM Trip WHERE town_from = 'Moscow';
-
--- 1. Метод выводит на консоль информацию о путешествии пассажиров
--- (название авиакомпании, название воздушного судна,  имя пассажира, место посадки, город вылета, город прилета)
--- 2. Метод для добавления новой авиакомпании (Название должна быть динамичной)
-
-SELECT Company.name, Trip.plane, Passenger.name, Pass_in_trip.place ,Trip.town_to, Trip.town_from
-from Company
-JOIN Trip ON(Company.id = Trip.company_id)
-JOIN Pass_in_trip ON(Trip.id = Pass_in_trip.trip_id)
-JOIN Passenger ON(Pass_in_trip.passenger_id = Passenger.id);
