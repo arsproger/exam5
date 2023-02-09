@@ -189,7 +189,10 @@ GROUP BY name
 ORDER BY MAX(LENGTH(name)) DESC LIMIT 1;
 
 -- #18 Вывести имена людей, у которых есть полный тёзка среди пассажиров
-SELECT Passenger.name FROM Passenger;
+SELECT name, COUNT(*)
+FROM Passenger
+GROUP BY name
+HAVING COUNT(*) > 1;
 
 -- #19 Вывести отсортированный по количеству перелетов (по убыванию) и имени (по возрастанию) список пассажиров, совершивших хотя бы 1 полет.
 SELECT Passenger.name, COUNT(*) FROM Passenger
@@ -205,3 +208,5 @@ WHERE town_from = 'Rostov' AND town_to = 'Moscow';
 
 -- #21 Удалить все перелеты, совершенные из Москвы (Moscow).
 DELETE FROM Trip WHERE town_from = 'Moscow';
+
+select name from passenger where id
