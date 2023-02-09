@@ -31,7 +31,7 @@ public class App {
                 System.out.print(resultSet.getString(3) + " - ");
                 System.out.print(resultSet.getString(4) + " - ");
                 System.out.print(resultSet.getString(5) + " - ");
-                System.out.print(resultSet.getString(6) + " - ");
+                System.out.print(resultSet.getString(6));
             }
         } finally {
             connection.close();
